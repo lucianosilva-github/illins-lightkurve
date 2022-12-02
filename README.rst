@@ -11,8 +11,6 @@ ILLINOIS-INSPER Lightkurve
                  :target: https://anaconda.org/conda-forge/lightkurve
 .. |pypi-badge| image:: https://img.shields.io/pypi/v/lightkurve.svg
                 :target: https://pypi.python.org/pypi/lightkurve
-.. |pypi-downloads| image:: https://pepy.tech/badge/lightkurve
-                :target: https://pepy.tech/project/lightkurve
 .. |test-badge| image:: https://github.com/lightkurve/lightkurve/workflows/Lightkurve-tests/badge.svg
                  :target: https://github.com/lightkurve/lightkurve/actions?query=branch%3Amain
 .. |astropy-badge| image:: https://img.shields.io/badge/powered%20by-AstroPy-orange.svg?style=flat
