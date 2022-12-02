@@ -1,7 +1,7 @@
 ILLINOIS-INSPER Lightkurve
 ==========================
 
-**A friendly package for Kepler & TESS time series analysis in CharmPy, STAPL and Python**
+**A friendly package for Kepler & TESS time series analysis in CharmPy, STAPL and Python/C++**
 
 **Documentation: https://docs.lightkurve.org**
 
@@ -20,7 +20,7 @@ ILLINOIS-INSPER Lightkurve
 .. |doi-badge| image:: https://zenodo.org/badge/DOI/10.5281/zenodo.1181928.svg
               :target: https://docs.lightkurve.org/about/citing.html             
 
-**ILLINOIS-INSPER Lightkurve** is a community-developed, open-source Python package which offers a beautiful and user-friendly way
+**ILLINOIS-INSPER Lightkurve** is a community-developed, open-source Python/C++ package which offers a beautiful and user-friendly way
 to analyze astronomical flux time series data, in particular the pixels and lightcurves obtained by
 **NASA's Kepler and TESS exoplanet missions, with efficiency provided by CharmPy and STAPL**.
 
