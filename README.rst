@@ -26,10 +26,6 @@ to analyze astronomical flux time series data, in particular the pixels and ligh
 
 .. image:: https://raw.githubusercontent.com/lightkurve/lightkurve/main/docs/source/_static/images/lightkurve-teaser.gif
 
-This package aims to lower the barrier for students, astronomers,
-and citizen scientists interested in analyzing Kepler and TESS space telescope data.
-It does this by providing **high-quality building blocks and tutorials**
-which enable both hand-tailored data analyses and advanced automated pipelines.
 
 
 Contact
