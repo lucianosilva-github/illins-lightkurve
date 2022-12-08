@@ -125,7 +125,7 @@ double round_sig(double value, double sig=5){
     return rounded;
 }
 
-int bls(stapl::pVector* lightcurve) {
+stapl::pVector* bls(stapl::pVector* lightcurve) {
     
     namespace fs = std::filesystem;
     std::string path = ".";
