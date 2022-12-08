@@ -12,6 +12,8 @@
 #include <numeric>
 #include <math.h>     // sin, cos
 
+using namespace stapl;
+
 const double PI = 3.1415926536;
 // Some constants to avoid recalculating them
 const double pi2 = 2*PI;      // 2*pi
@@ -123,7 +125,7 @@ double round_sig(double value, double sig=5){
     return rounded;
 }
 
-int bls() {
+int bls(stapl::pVector lightcurve) {
     
     namespace fs = std::filesystem;
     std::string path = ".";
@@ -155,7 +157,7 @@ int bls() {
             (filename.find("folded_") != 0) and (filename.find("GLS_") != 0))
         {
             std::cout << "Reading file: " << path_filename << " ... ";
-            std::vector<std::pair<std::string, std::vector<double>>> data = read_csv(path_filename);
+            stapl::pVector<std::pair<std::string, std::vector<double>>> data = read_csv(path_filename);
             //std::cout << data.at(1).second.size() << " " << data.at(0).second.size() << std::endl;
             
             if (data.at(0).second.size() != data.at(1).second.size())
