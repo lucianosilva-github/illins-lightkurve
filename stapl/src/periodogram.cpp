@@ -125,7 +125,7 @@ double round_sig(double value, double sig=5){
     return rounded;
 }
 
-int bls(stapl::pVector lightcurve) {
+int bls(stapl::pVector* lightcurve) {
     
     namespace fs = std::filesystem;
     std::string path = ".";
@@ -138,7 +138,7 @@ int bls(stapl::pVector lightcurve) {
     }
     
     const std::string filename_out = "power_frequencies.csv";
-    const std::vector<std::string> result_headers{"Filename", "Frequency [1/s]"};
+    const stapl::pVector<std::string> result_headers{"Filename", "Frequency [1/s]"};
     std::vector<std::string> power_filenames;
     std::vector<double> power_frequencies;
     
@@ -194,7 +194,7 @@ int bls(stapl::pVector lightcurve) {
             std::cout << "Found entries: " << number_entries;
             
             // put columns into a new vecotr to make code a bit easier to read
-            std::vector<double> time_series, time_series_sort, signal_data;
+            stapl::pVector<double> time_series, time_series_sort, signal_data;
             for (int ii = 0; ii < number_entries; ii++)
             {
                 time_series.push_back(data.at(0).second.at(ii));
@@ -244,14 +244,14 @@ int bls(stapl::pVector lightcurve) {
             std::cout << " Searching for frequencies ... ";
             
             // Prepare signal - mean(signal)
-            std::vector<double> signal_data_mean;
+            stapl::pVector<double> signal_data_mean;
             for (int ii = 0; ii < number_entries-1; ii++)
             {
                 signal_data_mean.push_back(signal_data[ii] - signal_mean);
             }
             
             // generalised Lomb-Scargle Periodogram (to not just get the highest frequency)
-            std::vector<double> LS_freq, LS_power;
+            stapl::pVector<double> LS_freq, LS_power;
             double freq = freq_spacing;
             while (freq <= freq_max)
             {
@@ -270,7 +270,7 @@ int bls(stapl::pVector lightcurve) {
                 const double tau = 1/pi4f * atan(sumsin/sumcos);    
                 
                 // Prepare time-tau
-                std::vector<double> time_tau;      // could be done in a lambda as well, but then the vector needs to be copied anyway
+                stapl::pVector<double> time_tau;      // could be done in a lambda as well, but then the vector needs to be copied anyway
                 for (int ii = 0; ii < number_entries-1; ii++)
                 {
                     time_tau.push_back(time_series[ii] - tau);
@@ -332,7 +332,7 @@ int bls(stapl::pVector lightcurve) {
     }
     
     // Get the indices of the sorted frequencies
-    std::vector<int> indices(power_frequencies.size());
+    stapl::pVector<int> indices(power_frequencies.size());
     std::iota(indices.begin(), indices.end(), 0);
     std::sort(indices.begin(), indices.end(),
                 [&](int A, int B) -> bool {
