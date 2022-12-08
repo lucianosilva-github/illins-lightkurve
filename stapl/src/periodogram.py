@@ -1149,8 +1149,8 @@ class BoxLeastSquaresPeriodogram(Periodogram):
                 "".format(np.round(npoints, 4))
             )
 
-        # Create BLS object and run the BLS search
-        bls = BoxLeastSquares(lc.time, lc.flux, dy)
+        # Create BLS object and run the BLS search using STAPL
+        bls = _cython_ bls(lc.flux)
         if period is None:
             period = bls.autoperiod(
                 duration,
