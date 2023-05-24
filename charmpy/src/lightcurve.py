@@ -6,12 +6,15 @@ import warnings
 import collections
 from collections.abc import Sequence
 
+
 import numpy as np
 from scipy.signal import savgol_filter
 from scipy.interpolate import interp1d
 import matplotlib
 from matplotlib import pyplot as plt
 from copy import deepcopy
+
+
 
 from astropy.table import Table, Column, MaskedColumn
 from astropy.io import fits
