@@ -4,6 +4,8 @@ CMD:=poetry run
 PYMODULE:=src
 TESTS:=tests
 
+
+
 # Run all the checks which do not change files
 all: mypy pytest flake8
 
