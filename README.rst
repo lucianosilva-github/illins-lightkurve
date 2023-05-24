@@ -3,6 +3,8 @@ ILLINOIS-INSPER Lightkurve
 
 **A friendly package for Kepler & TESS time series analysis in CharmPy, STAPL and Python/C++**
 
+
+
 |astropy-badge|
 
 
